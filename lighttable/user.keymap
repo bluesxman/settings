@@ -1,0 +1,51 @@
+;; User keymap
+;; -----------------------------
+;; Keymaps are stored as a set of diffs that are merged together together
+;; to create the final set of keys. You can modify these diffs to either add
+;; or subtract bindings.
+;;
+;; Like behaviors, keys are bound by tag. When objects with those tags are active
+;; the key bindings are live. Keys can be bound to any number of Light Table commands,
+;; allowing you the flexibility to execute multiple operations together. To see a list
+;; of all the commands you can execute, start typing a word related to the thing you
+;; want to do in between the square brackets (e.g. type "editor").
+
+{:+ {:app {"f11" [:window.fullscreen]
+           "ctrl-shift-r" [:workspace.show]
+           "ctrl-shift-o" [:toggle-console]
+           "ctrl-alt-o" [:clear-console]
+           "ctrl-shift-s" [:save-all]}
+
+     :editor {"ctrl-shift-w" [:editor.watch.watch-selection]
+              "ctrl-shift-q" [:editor.watch.unwatch]
+              "ctrl-shift-x" [:eval.cancel-all!]
+
+              "ctrl-t" [:new-file]
+              "ctrl-]" [:tabs.next]
+              "ctrl-[" [:tabs.prev]
+              "ctrl-alt-]" [:tabset.next]
+              "ctrl-alt-[" [:tabset.prev]
+
+              "ctrl-j" [:paredit.grow.left]
+              "ctrl-k" [:paredit.shrink.left]
+              "ctrl-l" [:paredit.shrink.right]
+              "ctrl-;" [:paredit.grow.right]
+              "ctrl-'" [:paredit.select.parent]
+              "ctrl-n" [:paredit.move.up.backward]
+              "ctrl-m" [:paredit.move.down.forward]
+              "ctrl-shift-n" [:paredit.move.down.backward]
+              "ctrl-shift-m" [:paredit.move.up.forward]
+
+              "ctrl-q" [:editor.doc.toggle]
+              "ctrl-shift-c" [:toggle-comment-selection]
+              "ctrl-shift-d" [:docs.search.show]
+              "ctrl-i" [:clear-inline-results]
+
+              "ctrl-shift-g" [:goto-line]
+              "ctrl-shift-j" [:editor.jump-to-definition-at-cursor]
+              "ctrl-shift-u" [:editor.unjump]
+              "ctrl-p" [:editor.page-down]
+              "ctrl-shift-p" [:editor.page-up]
+
+              "ctrl-shift-space" [:auto-complete]
+              }}}
